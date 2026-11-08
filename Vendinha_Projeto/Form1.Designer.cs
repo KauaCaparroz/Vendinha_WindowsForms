@@ -39,14 +39,15 @@
             label4 = new Label();
             label5 = new Label();
             btn_cadastrar = new Button();
+            dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
             // textNome
             // 
             textNome.Font = new Font("Segoe UI", 15F);
-            textNome.Location = new Point(384, 192);
+            textNome.Location = new Point(345, 192);
             textNome.Name = "textNome";
-            textNome.Size = new Size(298, 41);
+            textNome.Size = new Size(370, 41);
             textNome.TabIndex = 0;
             textNome.TextChanged += textBox1_TextChanged;
             // 
@@ -64,18 +65,19 @@
             // textCPF
             // 
             textCPF.Font = new Font("Segoe UI", 15F);
-            textCPF.Location = new Point(384, 274);
+            textCPF.Location = new Point(345, 274);
             textCPF.Name = "textCPF";
-            textCPF.Size = new Size(298, 41);
+            textCPF.Size = new Size(370, 41);
             textCPF.TabIndex = 2;
             // 
             // textDATADENASCIMENTO
             // 
             textDATADENASCIMENTO.Font = new Font("Segoe UI", 15F);
-            textDATADENASCIMENTO.Location = new Point(384, 361);
+            textDATADENASCIMENTO.Location = new Point(345, 361);
             textDATADENASCIMENTO.Name = "textDATADENASCIMENTO";
-            textDATADENASCIMENTO.Size = new Size(298, 41);
+            textDATADENASCIMENTO.Size = new Size(370, 41);
             textDATADENASCIMENTO.TabIndex = 3;
+            textDATADENASCIMENTO.TextChanged += textDATADENASCIMENTO_TextChanged;
             // 
             // label1
             // 
@@ -93,7 +95,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.MediumAquamarine;
-            label2.Location = new Point(384, 169);
+            label2.Location = new Point(345, 169);
             label2.Name = "label2";
             label2.Size = new Size(50, 20);
             label2.TabIndex = 5;
@@ -103,16 +105,16 @@
             // textEMAIL
             // 
             textEMAIL.Font = new Font("Segoe UI", 15F);
-            textEMAIL.Location = new Point(384, 441);
+            textEMAIL.Location = new Point(345, 441);
             textEMAIL.Name = "textEMAIL";
-            textEMAIL.Size = new Size(298, 41);
+            textEMAIL.Size = new Size(370, 41);
             textEMAIL.TabIndex = 8;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.MediumAquamarine;
-            label3.Location = new Point(384, 251);
+            label3.Location = new Point(345, 251);
             label3.Name = "label3";
             label3.Size = new Size(33, 20);
             label3.TabIndex = 9;
@@ -123,7 +125,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.MediumAquamarine;
-            label4.Location = new Point(384, 338);
+            label4.Location = new Point(345, 338);
             label4.Name = "label4";
             label4.Size = new Size(145, 20);
             label4.TabIndex = 10;
@@ -133,11 +135,12 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.MediumAquamarine;
-            label5.Location = new Point(384, 418);
+            label5.Location = new Point(345, 418);
             label5.Name = "label5";
             label5.Size = new Size(114, 20);
             label5.TabIndex = 11;
             label5.Text = "Email(opcional)";
+            label5.Click += label5_Click;
             // 
             // btn_cadastrar
             // 
@@ -149,12 +152,20 @@
             btn_cadastrar.UseVisualStyleBackColor = true;
             btn_cadastrar.Click += button1_Click;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(345, 371);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(370, 27);
+            dateTimePicker1.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumAquamarine;
             ClientSize = new Size(1164, 578);
+            Controls.Add(dateTimePicker1);
             Controls.Add(btn_cadastrar);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -186,5 +197,6 @@
         private Label label4;
         private Label label5;
         private Button btn_cadastrar;
+        private DateTimePicker dateTimePicker1;
     }
 }
