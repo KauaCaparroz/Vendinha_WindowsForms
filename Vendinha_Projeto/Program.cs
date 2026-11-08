@@ -1,17 +1,28 @@
-namespace Vendinha_Projeto
+
+using Microsoft.EntityFrameworkCore;
+using Projeto_Vendinha.Data;
+using Vendinha_Projeto;
+
+namespace Vendinha_ProjetoWindowsForms
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            // Configura o banco de dados SQLite
+            var opcoes = new DbContextOptionsBuilder<VendinhaContext>()
+                .UseSqlite("Data Source=vendinha.db")
+                .Options;
+
+            using (var banco = new VendinhaContext(opcoes))//Vai criar o banco e as tabelas caso ainda não existam
+            {
+                banco.Database.EnsureCreated();
+            }
+
+            Application.Run(new Form1());//Abre a tela principal do programa
         }
     }
 }
