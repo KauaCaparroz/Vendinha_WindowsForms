@@ -6,9 +6,9 @@ using Projeto_Vendinha.Models;
 
 namespace Vendinha_Projeto
 {
-    public partial class Form1 : Form
+    public partial class Form1Cadastro : Form
     {
-        public Form1()
+        public Form1Cadastro()
         {
             InitializeComponent();
         }

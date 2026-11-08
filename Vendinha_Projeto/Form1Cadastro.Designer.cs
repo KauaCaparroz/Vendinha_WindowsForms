@@ -1,6 +1,6 @@
 ﻿namespace Vendinha_Projeto
 {
-    partial class Form1
+    partial class Form1Cadastro
     {
         /// <summary>
         ///  Required designer variable.
@@ -40,6 +40,7 @@
             label5 = new Label();
             btn_cadastrar = new Button();
             dateTimePicker1 = new DateTimePicker();
+            sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
             SuspendLayout();
             // 
             // textNome
@@ -159,12 +160,19 @@
             dateTimePicker1.Size = new Size(370, 27);
             dateTimePicker1.TabIndex = 13;
             // 
-            // Form1
+            // sqliteCommand1
+            // 
+            sqliteCommand1.CommandTimeout = 30;
+            sqliteCommand1.Connection = null;
+            sqliteCommand1.Transaction = null;
+            sqliteCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
+            // 
+            // Form1Cadastro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumAquamarine;
-            ClientSize = new Size(1164, 578);
+            ClientSize = new Size(1587, 749);
             Controls.Add(dateTimePicker1);
             Controls.Add(btn_cadastrar);
             Controls.Add(label5);
@@ -177,7 +185,7 @@
             Controls.Add(textCPF);
             Controls.Add(VENDINHA);
             Controls.Add(textNome);
-            Name = "Form1";
+            Name = "Form1Cadastro";
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
@@ -198,5 +206,6 @@
         private Label label5;
         private Button btn_cadastrar;
         private DateTimePicker dateTimePicker1;
+        private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
     }
 }

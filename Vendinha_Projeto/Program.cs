@@ -22,7 +22,7 @@ namespace Vendinha_ProjetoWindowsForms
                 banco.Database.EnsureCreated();
             }
 
-            Application.Run(new Form1());//Abre a tela principal do programa
+            Application.Run(new Form1Cadastro());//Abre a tela principal do programa
         }
     }
 }
