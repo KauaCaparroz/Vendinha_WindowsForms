@@ -7,7 +7,7 @@ namespace Projeto_Vendinha
 {
     public class ServicoClientes
     {
-        public List<Cliente> ConsultarClientes()
+        public List<Cliente> ConsultarClientes(string nome = "", int pagina = 1)
         {
             var opcoes = new DbContextOptionsBuilder<VendinhaContext>()
                 .UseSqlite("Data Source=vendinha.db")
@@ -15,7 +15,17 @@ namespace Projeto_Vendinha
 
             using (var banco = new VendinhaContext(opcoes))
             {
-                return banco.Clientes.ToList();
+                return banco.Clientes
+                    .Include(c => c.Dividas)
+                    .Where(c => c.NomeCompleto.Contains(nome))
+                    .ToList()
+                    .OrderByDescending(c => c.Dividas
+                        .Where(d => !d.Paga)
+                        .Sum(d => d.Valor))
+                    .ThenBy(c => c.NomeCompleto)
+                    .Skip((Math.Max(1, pagina) - 1) * 10)
+                    .Take(10)
+                    .ToList();
             }
         }
     }

@@ -29,5 +29,7 @@ namespace Projeto_Vendinha.Models
                 return idade;
             }
         }
+
+        public List<Divida> Dividas { get; set; } = new List<Divida>();
     }
 }
