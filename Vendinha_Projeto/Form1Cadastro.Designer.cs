@@ -40,11 +40,12 @@
             label4 = new Label();
             label5 = new Label();
             btn_cadastrar = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            dtpNascimento = new DateTimePicker();
             sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
             imageList1 = new ImageList(components);
             pictureBox2 = new PictureBox();
             label6 = new Label();
+            btnGerenciarDividas = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -153,7 +154,7 @@
             // 
             btn_cadastrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btn_cadastrar.ForeColor = Color.MidnightBlue;
-            btn_cadastrar.Location = new Point(890, 743);
+            btn_cadastrar.Location = new Point(890, 709);
             btn_cadastrar.Name = "btn_cadastrar";
             btn_cadastrar.Size = new Size(210, 59);
             btn_cadastrar.TabIndex = 12;
@@ -161,14 +162,14 @@
             btn_cadastrar.UseVisualStyleBackColor = true;
             btn_cadastrar.Click += button1_Click;
             // 
-            // dateTimePicker1
+            // dtpNascimento
             // 
-            dateTimePicker1.CalendarForeColor = SystemColors.ActiveCaptionText;
-            dateTimePicker1.CalendarMonthBackground = SystemColors.ControlLightLight;
-            dateTimePicker1.Location = new Point(820, 573);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(370, 27);
-            dateTimePicker1.TabIndex = 13;
+            dtpNascimento.CalendarForeColor = SystemColors.ActiveCaptionText;
+            dtpNascimento.CalendarMonthBackground = SystemColors.ControlLightLight;
+            dtpNascimento.Location = new Point(820, 573);
+            dtpNascimento.Name = "dtpNascimento";
+            dtpNascimento.Size = new Size(370, 27);
+            dtpNascimento.TabIndex = 13;
             // 
             // sqliteCommand1
             // 
@@ -206,15 +207,27 @@
             label6.Text = "CADASTRO CLIENTE";
             label6.Click += label6_Click;
             // 
+            // btnGerenciarDividas
+            // 
+            btnGerenciarDividas.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnGerenciarDividas.ForeColor = Color.MidnightBlue;
+            btnGerenciarDividas.Location = new Point(820, 801);
+            btnGerenciarDividas.Name = "btnGerenciarDividas";
+            btnGerenciarDividas.Size = new Size(370, 59);
+            btnGerenciarDividas.TabIndex = 17;
+            btnGerenciarDividas.Text = "GERENCIAR DÍVIDAS";
+            btnGerenciarDividas.UseVisualStyleBackColor = true;
+            // 
             // Form1Cadastro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CornflowerBlue;
             ClientSize = new Size(1873, 947);
+            Controls.Add(btnGerenciarDividas);
             Controls.Add(label6);
             Controls.Add(pictureBox2);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpNascimento);
             Controls.Add(btn_cadastrar);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -245,10 +258,11 @@
         private Label label4;
         private Label label5;
         private Button btn_cadastrar;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpNascimento;
         private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
         private ImageList imageList1;
         private PictureBox pictureBox2;
         private Label label6;
+        private Button btnGerenciarDividas;
     }
 }

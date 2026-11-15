@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Projeto_Vendinha;
 using Projeto_Vendinha.Data;
 using Projeto_Vendinha.Models;
+using Vendinha_ProjetoWindowsForms;
 
 namespace Vendinha_Projeto
 {
@@ -11,6 +12,9 @@ namespace Vendinha_Projeto
         public Form1Cadastro()
         {
             InitializeComponent();
+
+            btnGerenciarDividas.Click -= btnGerenciarDividas_Click;
+            btnGerenciarDividas.Click += btnGerenciarDividas_Click;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,13 +62,7 @@ namespace Vendinha_Projeto
                 return;
             }
 
-            if (!DateTime.TryParse(textDATADENASCIMENTO.Text, out DateTime nascimento))
-            {
-                MessageBox.Show("Data de nascimento inválida!");
-                return;
-            }
-
-            nascimento = nascimento.Date;
+            DateTime nascimento = dtpNascimento.Value.Date;
 
             if (nascimento > DateTime.Today)
             {
@@ -72,11 +70,13 @@ namespace Vendinha_Projeto
                 return;
             }
 
-            if (!string.IsNullOrWhiteSpace(textEMAIL.Text))
+            string email = textEMAIL.Text.Trim();
+
+            if (email != "")
             {
-                if (!System.Net.Mail.MailAddress.TryCreate(textEMAIL.Text, out var email)
-                    || email.Address != textEMAIL.Text
-                    || !email.Host.Contains('.'))
+                bool emailValido = System.Net.Mail.MailAddress.TryCreate(email, out var endereco);
+
+                if (!emailValido || endereco == null || endereco.Address != email || !endereco.Host.Contains('.'))
                 {
                     MessageBox.Show("Email inválido!");
                     return;
@@ -97,15 +97,12 @@ namespace Vendinha_Projeto
                     return;
                 }
 
-                var cliente = new Cliente
-                {
-                    NomeCompleto = textNome.Text.Trim(),
-                    CPF = cpf,
-                    DataNascimento = nascimento,
-                    Email = string.IsNullOrWhiteSpace(textEMAIL.Text)
-                        ? null
-                        : textEMAIL.Text.Trim()
-                };
+                Cliente cliente = new Cliente();
+
+                cliente.NomeCompleto = textNome.Text.Trim();
+                cliente.CPF = cpf;
+                cliente.DataNascimento = nascimento;
+                cliente.Email = email == "" ? null : email;
 
                 banco.Clientes.Add(cliente);
                 banco.SaveChanges();
@@ -114,9 +111,15 @@ namespace Vendinha_Projeto
 
                 textNome.Clear();
                 textCPF.Clear();
-                textDATADENASCIMENTO.Clear();
                 textEMAIL.Clear();
+                dtpNascimento.Value = DateTime.Today;
             }
+        }
+
+        private void btnGerenciarDividas_Click(object sender, EventArgs e)
+        {
+            Form2dividas telaDividas = new Form2dividas();
+            telaDividas.ShowDialog();
         }
 
         private void label3_Click(object sender, EventArgs e)
