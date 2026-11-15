@@ -166,5 +166,11 @@ namespace Vendinha_Projeto
         {
 
         }
+
+        private void btnConsultarClientes_Click(object sender, EventArgs e)
+        {
+            Form3Clientes telaClientes = new Form3Clientes();
+            telaClientes.ShowDialog();
+        }
     }
 }

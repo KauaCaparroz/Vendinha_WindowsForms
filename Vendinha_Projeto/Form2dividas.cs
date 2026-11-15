@@ -127,5 +127,10 @@ namespace Vendinha_ProjetoWindowsForms
         {
 
         }
+
+        private void gridDividas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

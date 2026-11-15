@@ -28,5 +28,18 @@ namespace Projeto_Vendinha
                     .ToList();
             }
         }
+
+        public int ContarClientes(string nome = "")
+        {
+            var opcoes = new DbContextOptionsBuilder<VendinhaContext>()
+                .UseSqlite("Data Source=vendinha.db")
+                .Options;
+
+            using (var banco = new VendinhaContext(opcoes))
+            {
+                return banco.Clientes.Count(c => c.NomeCompleto.Contains(nome));
+            }
+        }
     }
 }
+

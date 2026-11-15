@@ -46,6 +46,7 @@
             pictureBox2 = new PictureBox();
             label6 = new Label();
             btnGerenciarDividas = new Button();
+            btnConsultarClientes = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -218,12 +219,25 @@
             btnGerenciarDividas.Text = "GERENCIAR DÍVIDAS";
             btnGerenciarDividas.UseVisualStyleBackColor = true;
             // 
+            // btnConsultarClientes
+            // 
+            btnConsultarClientes.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnConsultarClientes.ForeColor = Color.MidnightBlue;
+            btnConsultarClientes.Location = new Point(820, 876);
+            btnConsultarClientes.Name = "btnConsultarClientes";
+            btnConsultarClientes.Size = new Size(370, 59);
+            btnConsultarClientes.TabIndex = 18;
+            btnConsultarClientes.Text = "Consultar Clientes";
+            btnConsultarClientes.UseVisualStyleBackColor = true;
+            btnConsultarClientes.Click += btnConsultarClientes_Click;
+            // 
             // Form1Cadastro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CornflowerBlue;
             ClientSize = new Size(1873, 947);
+            Controls.Add(btnConsultarClientes);
             Controls.Add(btnGerenciarDividas);
             Controls.Add(label6);
             Controls.Add(pictureBox2);
@@ -264,5 +278,6 @@
         private PictureBox pictureBox2;
         private Label label6;
         private Button btnGerenciarDividas;
+        private Button btnConsultarClientes;
     }
 }

@@ -51,7 +51,7 @@ namespace Vendinha_ProjetoWindowsForms
             // idcliente
             // 
             idcliente.ForeColor = SystemColors.WindowText;
-            idcliente.Location = new Point(477, 245);
+            idcliente.Location = new Point(477, 201);
             idcliente.MaximumSize = new Size(300, 100);
             idcliente.Name = "idcliente";
             idcliente.Size = new Size(200, 27);
@@ -74,7 +74,7 @@ namespace Vendinha_ProjetoWindowsForms
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(229, 231);
+            label2.Location = new Point(229, 187);
             label2.Name = "label2";
             label2.Size = new Size(195, 41);
             label2.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace Vendinha_ProjetoWindowsForms
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(229, 291);
+            label3.Location = new Point(229, 248);
             label3.Name = "label3";
             label3.Size = new Size(232, 41);
             label3.TabIndex = 4;
@@ -95,7 +95,7 @@ namespace Vendinha_ProjetoWindowsForms
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(229, 356);
+            label4.Location = new Point(229, 315);
             label4.Name = "label4";
             label4.Size = new Size(189, 41);
             label4.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace Vendinha_ProjetoWindowsForms
             // valordivida
             // 
             valordivida.ForeColor = SystemColors.WindowText;
-            valordivida.Location = new Point(477, 305);
+            valordivida.Location = new Point(477, 262);
             valordivida.MaximumSize = new Size(300, 100);
             valordivida.Name = "valordivida";
             valordivida.Size = new Size(200, 27);
@@ -113,7 +113,7 @@ namespace Vendinha_ProjetoWindowsForms
             // iddivida
             // 
             iddivida.ForeColor = SystemColors.WindowText;
-            iddivida.Location = new Point(477, 370);
+            iddivida.Location = new Point(477, 329);
             iddivida.MaximumSize = new Size(300, 100);
             iddivida.Name = "iddivida";
             iddivida.Size = new Size(200, 27);
@@ -123,7 +123,7 @@ namespace Vendinha_ProjetoWindowsForms
             // 
             btnCadastrarDivida.BackColor = Color.DarkBlue;
             btnCadastrarDivida.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrarDivida.Location = new Point(751, 245);
+            btnCadastrarDivida.Location = new Point(751, 201);
             btnCadastrarDivida.Name = "btnCadastrarDivida";
             btnCadastrarDivida.Size = new Size(200, 35);
             btnCadastrarDivida.TabIndex = 8;
@@ -134,7 +134,7 @@ namespace Vendinha_ProjetoWindowsForms
             // 
             btnConsultarDividas.BackColor = Color.DarkBlue;
             btnConsultarDividas.ForeColor = SystemColors.ButtonHighlight;
-            btnConsultarDividas.Location = new Point(751, 305);
+            btnConsultarDividas.Location = new Point(751, 262);
             btnConsultarDividas.Name = "btnConsultarDividas";
             btnConsultarDividas.Size = new Size(200, 35);
             btnConsultarDividas.TabIndex = 9;
@@ -145,7 +145,7 @@ namespace Vendinha_ProjetoWindowsForms
             // 
             btnPagarDivida.BackColor = Color.DarkBlue;
             btnPagarDivida.ForeColor = SystemColors.ButtonHighlight;
-            btnPagarDivida.Location = new Point(751, 366);
+            btnPagarDivida.Location = new Point(751, 329);
             btnPagarDivida.Name = "btnPagarDivida";
             btnPagarDivida.Size = new Size(200, 35);
             btnPagarDivida.TabIndex = 10;
@@ -154,14 +154,17 @@ namespace Vendinha_ProjetoWindowsForms
             // 
             // gridDividas
             // 
+            gridDividas.AllowUserToAddRows = false;
             gridDividas.BackgroundColor = SystemColors.ControlLight;
             gridDividas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridDividas.Columns.AddRange(new DataGridViewColumn[] { colId, colCliente, colValor, colData, colPaga });
-            gridDividas.Location = new Point(274, 445);
+            gridDividas.Location = new Point(261, 382);
             gridDividas.Name = "gridDividas";
+            gridDividas.ReadOnly = true;
             gridDividas.RowHeadersWidth = 51;
-            gridDividas.Size = new Size(677, 193);
+            gridDividas.Size = new Size(677, 314);
             gridDividas.TabIndex = 11;
+            gridDividas.CellContentClick += gridDividas_CellContentClick;
             // 
             // colId
             // 
