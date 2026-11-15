@@ -1,10 +1,5 @@
 ﻿
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Projeto_Vendinha;
 
@@ -12,7 +7,7 @@ namespace Vendinha_ProjetoWindowsForms
 {
     public partial class Form2dividas : Form
     {
-        private readonly ServicoDividas servicoDividas = new ServicoDividas();
+        private ServicoDividas servicoDividas = new ServicoDividas();
 
         public Form2dividas()
         {
@@ -29,13 +24,17 @@ namespace Vendinha_ProjetoWindowsForms
 
         private void btnCadastrarDivida_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(idcliente.Text, out int clienteId))
+            int clienteId;
+
+            if (!int.TryParse(idcliente.Text, out clienteId))
             {
                 MessageBox.Show("Digite um ID de cliente válido.");
                 return;
             }
 
-            if (!decimal.TryParse(valordivida.Text, out decimal valor))
+            decimal valor;
+
+            if (!decimal.TryParse(valordivida.Text, out valor))
             {
                 MessageBox.Show("Digite um valor de dívida válido.");
                 return;
@@ -54,7 +53,9 @@ namespace Vendinha_ProjetoWindowsForms
 
         private void btnPagarDivida_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(iddivida.Text, out int dividaId))
+            int dividaId;
+
+            if (!int.TryParse(iddivida.Text, out dividaId))
             {
                 MessageBox.Show("Digite um ID de dívida válido.");
                 return;
@@ -63,7 +64,9 @@ namespace Vendinha_ProjetoWindowsForms
             string mensagem = servicoDividas.PagarDivida(dividaId);
             MessageBox.Show(mensagem);
 
-            if (int.TryParse(idcliente.Text, out int clienteId))
+            int clienteId;
+
+            if (int.TryParse(idcliente.Text, out clienteId))
             {
                 ConsultarDividasNaTabela();
             }
@@ -71,7 +74,9 @@ namespace Vendinha_ProjetoWindowsForms
 
         private void ConsultarDividasNaTabela()
         {
-            if (!int.TryParse(idcliente.Text, out int clienteId))
+            int clienteId;
+
+            if (!int.TryParse(idcliente.Text, out clienteId))
             {
                 MessageBox.Show("Digite o ID do cliente para consultar as dívidas.");
                 return;
@@ -100,37 +105,30 @@ namespace Vendinha_ProjetoWindowsForms
 
         private void Form2dividas_Load(object sender, EventArgs e)
         {
-
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void gridDividas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
     }
 }

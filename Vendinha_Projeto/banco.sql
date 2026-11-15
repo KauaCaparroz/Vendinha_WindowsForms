@@ -1,0 +1,18 @@
+
+CREATE TABLE IF NOT EXISTS Clientes (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    NomeCompleto TEXT NOT NULL,
+    CPF TEXT NOT NULL UNIQUE,
+    DataNascimento TEXT NOT NULL,
+    Email TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Dividas (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Valor TEXT NOT NULL,
+    Paga INTEGER NOT NULL,
+    DataCriacao TEXT NOT NULL,
+    DataPagamento TEXT,
+    ClienteId INTEGER NOT NULL,
+    FOREIGN KEY (ClienteId) REFERENCES Clientes(Id)
+);

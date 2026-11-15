@@ -48,7 +48,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Navy;
-            label1.Location = new Point(254, 52);
+            label1.Location = new Point(375, 61);
             label1.Name = "label1";
             label1.Size = new Size(663, 81);
             label1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // textPesquisa
             // 
-            textPesquisa.Location = new Point(315, 212);
+            textPesquisa.Location = new Point(351, 205);
             textPesquisa.Multiline = true;
             textPesquisa.Name = "textPesquisa";
             textPesquisa.PlaceholderText = "Nome do cliente";
@@ -66,7 +66,7 @@
             // 
             // btnPesquisar
             // 
-            btnPesquisar.Location = new Point(733, 212);
+            btnPesquisar.Location = new Point(769, 205);
             btnPesquisar.Name = "btnPesquisar";
             btnPesquisar.Size = new Size(135, 40);
             btnPesquisar.TabIndex = 2;
@@ -80,7 +80,7 @@
             gridClientes.BackgroundColor = SystemColors.ControlLight;
             gridClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridClientes.Columns.AddRange(new DataGridViewColumn[] { colId, colNome, colIdade, colTotalDevido });
-            gridClientes.Location = new Point(315, 247);
+            gridClientes.Location = new Point(351, 247);
             gridClientes.Name = "gridClientes";
             gridClientes.ReadOnly = true;
             gridClientes.RowHeadersWidth = 51;
@@ -124,7 +124,7 @@
             // 
             btnAnterior.BackColor = Color.DarkBlue;
             btnAnterior.ForeColor = Color.White;
-            btnAnterior.Location = new Point(315, 608);
+            btnAnterior.Location = new Point(351, 608);
             btnAnterior.Name = "btnAnterior";
             btnAnterior.Size = new Size(164, 29);
             btnAnterior.TabIndex = 4;
@@ -135,7 +135,7 @@
             // 
             btnProximo.BackColor = Color.DarkBlue;
             btnProximo.ForeColor = Color.White;
-            btnProximo.Location = new Point(704, 608);
+            btnProximo.Location = new Point(740, 608);
             btnProximo.Name = "btnProximo";
             btnProximo.Size = new Size(164, 29);
             btnProximo.TabIndex = 5;
@@ -146,7 +146,7 @@
             // 
             btnEditarCliente.BackColor = Color.DarkBlue;
             btnEditarCliente.ForeColor = Color.White;
-            btnEditarCliente.Location = new Point(874, 362);
+            btnEditarCliente.Location = new Point(910, 365);
             btnEditarCliente.Name = "btnEditarCliente";
             btnEditarCliente.Size = new Size(164, 48);
             btnEditarCliente.TabIndex = 6;
@@ -158,7 +158,7 @@
             // 
             btnExcluirCliente.BackColor = Color.DarkBlue;
             btnExcluirCliente.ForeColor = Color.White;
-            btnExcluirCliente.Location = new Point(874, 425);
+            btnExcluirCliente.Location = new Point(910, 431);
             btnExcluirCliente.Name = "btnExcluirCliente";
             btnExcluirCliente.Size = new Size(164, 48);
             btnExcluirCliente.TabIndex = 7;
@@ -171,7 +171,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(1202, 728);
+            ClientSize = new Size(1317, 754);
             Controls.Add(btnExcluirCliente);
             Controls.Add(btnEditarCliente);
             Controls.Add(btnProximo);
