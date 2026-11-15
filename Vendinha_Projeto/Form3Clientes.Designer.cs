@@ -38,6 +38,8 @@
             colTotalDevido = new DataGridViewTextBoxColumn();
             btnAnterior = new Button();
             btnProximo = new Button();
+            btnEditarCliente = new Button();
+            btnExcluirCliente = new Button();
             ((System.ComponentModel.ISupportInitialize)gridClientes).BeginInit();
             SuspendLayout();
             // 
@@ -140,12 +142,38 @@
             btnProximo.Text = "Próximo";
             btnProximo.UseVisualStyleBackColor = false;
             // 
+            // btnEditarCliente
+            // 
+            btnEditarCliente.BackColor = Color.DarkBlue;
+            btnEditarCliente.ForeColor = Color.White;
+            btnEditarCliente.Location = new Point(874, 362);
+            btnEditarCliente.Name = "btnEditarCliente";
+            btnEditarCliente.Size = new Size(164, 48);
+            btnEditarCliente.TabIndex = 6;
+            btnEditarCliente.Text = "Editar Cliente";
+            btnEditarCliente.UseVisualStyleBackColor = false;
+            btnEditarCliente.Click += btnEditarCliente_Click;
+            // 
+            // btnExcluirCliente
+            // 
+            btnExcluirCliente.BackColor = Color.DarkBlue;
+            btnExcluirCliente.ForeColor = Color.White;
+            btnExcluirCliente.Location = new Point(874, 425);
+            btnExcluirCliente.Name = "btnExcluirCliente";
+            btnExcluirCliente.Size = new Size(164, 48);
+            btnExcluirCliente.TabIndex = 7;
+            btnExcluirCliente.Text = "Excluir Cliente";
+            btnExcluirCliente.UseVisualStyleBackColor = false;
+            btnExcluirCliente.Click += btnExcluirCliente_Click;
+            // 
             // Form3Clientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1202, 728);
+            Controls.Add(btnExcluirCliente);
+            Controls.Add(btnEditarCliente);
             Controls.Add(btnProximo);
             Controls.Add(btnAnterior);
             Controls.Add(gridClientes);
@@ -172,5 +200,7 @@
         private DataGridViewTextBoxColumn colTotalDevido;
         private Button btnAnterior;
         private Button btnProximo;
+        private Button btnEditarCliente;
+        private Button btnExcluirCliente;
     }
 }

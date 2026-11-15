@@ -5,19 +5,14 @@
         // Identificador da dívida
         public int Id { get; set; }
 
-        // Valor da dívida
         public decimal Valor { get; set; }
 
-        // Indica se a dívida foi paga
         public bool Paga { get; set; }
 
-        // Data de criação da dívida
         public DateTime DataCriacao { get; set; }
 
-        // Data do pagamento, se já foi paga
         public DateTime? DataPagamento { get; set; }
 
-        // Identificador do cliente
         public int ClienteId { get; set; }
 
         // Cliente relacionado à dívida
