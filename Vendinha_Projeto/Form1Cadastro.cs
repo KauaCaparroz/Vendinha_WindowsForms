@@ -58,7 +58,13 @@ namespace Vendinha_Projeto
                 return;
             }
 
-            DateTime nascimento = dtpNascimento.Value.Date;
+            if (!DateTime.TryParse(textDATADENASCIMENTO.Text, out DateTime nascimento))
+            {
+                MessageBox.Show("Data de nascimento inválida!");
+                return;
+            }
+
+            nascimento = nascimento.Date;
 
             if (nascimento > DateTime.Today)
             {
@@ -108,7 +114,7 @@ namespace Vendinha_Projeto
 
                 textNome.Clear();
                 textCPF.Clear();
-                dtpNascimento.Value = DateTime.Today;
+                textDATADENASCIMENTO.Clear();
                 textEMAIL.Clear();
             }
         }
@@ -129,6 +135,31 @@ namespace Vendinha_Projeto
         }
 
         private void textDATADENASCIMENTO_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textCPF_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
